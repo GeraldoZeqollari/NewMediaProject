@@ -15,6 +15,7 @@ class ReadXmlController extends Controller
         return view("xml-data");
     }
 
+    
     public function store()
     {
 
