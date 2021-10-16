@@ -24,8 +24,6 @@ class ReadXmlController extends Controller
         $names2 = $xmlObject->xpath('/product/definitions/headerData');
 
 
-
-
         $xml = new DetailsData;
         $xml1 = new HeaderData;
         $xml3 = new Products;
