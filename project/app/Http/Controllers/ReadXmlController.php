@@ -130,7 +130,7 @@ class ReadXmlController extends Controller
         // $xml1->save();
         $xml->save();
 
-
+            
         return back()->with('success', 'Data saved successfully!');
     }
 }
