@@ -15,7 +15,13 @@ class ReadXmlController extends Controller
         return view("xml-data");
     }
 
-    
+//Ne kete controller pasi behet upload ne front xml file lexohet dhe me pas merren te dhenat dhe ruhen ne tabela
+//mund te krijojme dy controllera te tjere e te ruhen te dhenat per cdo tabele por edhe ne kete menyre edhe pse seshte optimale
+
+
+
+
+
     public function store()
     {
 
@@ -30,48 +36,48 @@ class ReadXmlController extends Controller
         $xml3 = new Products;
 
 
-        foreach ($names1 as $data) {
+        // foreach ($names1 as $data) {
 
 
-            $xml->cedi = $data->cedi;
-            $xml->childWeightFrom = $data->childWeightFrom;
-            $xml->childWeightTo = $data->childWeightTo;
-            $xml->color_code = $data->color_code;
-            $xml->color_description = $data->color_description;
-            $xml->countryImages = $data->countryImages;
-            $xml->defaultSku = $data->defaultSku;
-            $xml->preferredEan = $data->preferredEan;
-            $xml->sapAssortmentLevel = $data->sapAssortmentLevel;
-            $xml->sapPrice = $data->sapPrice;
-            $xml->season = $data->season;
-            $xml->showOnLineSku = $data->showOnLineSku;
-            $xml->size_code = $data->size_code;
-            $xml->size_description = $data->size_description;
-            $xml->skuID = $data->skuID;
-            $xml->skuName = $data->skuName;
-            $xml->stateOfArticle = $data->stateOfArticle;
-            $xml->umSAPprice = $data->umSAPprice;
-            $xml->volume = $data->volume;
-            $xml->weight = $data->weight;
-        }
-
-        // foreach ($names as $data) {
-        //     $xml3->bleachingCode = $data->bleachingCode;
-        //     $xml3->defaultLanguage = $data->defaultLanguage;
-        //     $xml3->dryCleaningCode = $data->dryCleaningCode;
-        //     $xml3->dryingCode = $data->dryingCode;
-        //     $xml3->fasteningTypeCode = $data->fasteningTypeCode;
-        //     $xml3->ironingCode = $data->ironingCode;
-        //     $xml3->productID = $data->productID;
-        //     $xml3->pulloutTypeCode = $data->pulloutTypeCode;
-        //     $xml3->sapPacket = $data->sapPacket;
-        //     $xml3->updateImages = $data->updateImages;
-        //     $xml3->waistlineCode = $data->waistlineCode;
-        //     $xml3->washabilityCode = $data->washabilityCode;
+        //     $xml->cedi = $data->cedi;
+        //     $xml->childWeightFrom = $data->childWeightFrom;
+        //     $xml->childWeightTo = $data->childWeightTo;
+        //     $xml->color_code = $data->color_code;
+        //     $xml->color_description = $data->color_description;
+        //     $xml->countryImages = $data->countryImages;
+        //     $xml->defaultSku = $data->defaultSku;
+        //     $xml->preferredEan = $data->preferredEan;
+        //     $xml->sapAssortmentLevel = $data->sapAssortmentLevel;
+        //     $xml->sapPrice = $data->sapPrice;
+        //     $xml->season = $data->season;
+        //     $xml->showOnLineSku = $data->showOnLineSku;
+        //     $xml->size_code = $data->size_code;
+        //     $xml->size_description = $data->size_description;
+        //     $xml->skuID = $data->skuID;
+        //     $xml->skuName = $data->skuName;
+        //     $xml->stateOfArticle = $data->stateOfArticle;
+        //     $xml->umSAPprice = $data->umSAPprice;
+        //     $xml->volume = $data->volume;
+        //     $xml->weight = $data->weight;
         // }
 
+        foreach ($names as $data) {
+            $xml3->bleachingCode = $data->bleachingCode;
+            $xml3->defaultLanguage = $data->defaultLanguage;
+            $xml3->dryCleaningCode = $data->dryCleaningCode;
+            $xml3->dryingCode = $data->dryingCode;
+            $xml3->fasteningTypeCode = $data->fasteningTypeCode;
+            $xml3->ironingCode = $data->ironingCode;
+            $xml3->productID = $data->productID;
+            $xml3->pulloutTypeCode = $data->pulloutTypeCode;
+            $xml3->sapPacket = $data->sapPacket;
+            $xml3->updateImages = $data->updateImages;
+            $xml3->waistlineCode = $data->waistlineCode;
+            $xml3->washabilityCode = $data->washabilityCode;
+        }
+
         // foreach ($names2 as $data) {
-       
+
         // $xml1->bag = $data->bag;
         // $xml1->bleachingDescription = $data->bleachingDescription;
         // $xml1->brand = $data->brand;
@@ -126,11 +132,11 @@ class ReadXmlController extends Controller
         // $xml1->zipStopper = $data->zipStopper;
         // }
 
-       // $xml3->save();
+        $xml3->save();
         // $xml1->save();
-        $xml->save();
+        // $xml->save();
 
-            
+
         return back()->with('success', 'Data saved successfully!');
     }
 }

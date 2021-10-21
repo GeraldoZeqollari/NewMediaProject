@@ -4,11 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class HeaderData extends Model
 {
     use HasFactory;
 
+    use SoftDeletes;
+
+    protected $table = 'header_data';
+    protected $dates = ['deleted_at'];
     public $timestamps = false;
     protected $fillable = [
         'bag',
